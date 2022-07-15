@@ -16,7 +16,7 @@ public class InsertTheElementArray {
         System.out.print("Nhập phần tử k = ");
         int k = scanner.nextInt();
 
-    int arrIndex = arr.length - 1;
+    int arrIndex = arr.length - 1; 
     int tempIndex = arr.length;
     int [] tempArr = new int [tempIndex + 1];
     boolean inserted = false;
