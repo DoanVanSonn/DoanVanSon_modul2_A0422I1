@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class StopWatch {
-    private long startTime,endTime;
+    private long startTime, endTime;
 
     public long getStartTime() {
         return startTime;
@@ -13,32 +13,37 @@ public class StopWatch {
     public long getEndTime() {
         return endTime;
     }
-    public StopWatch(){
-    this.startTime= new Date().getTime();
+
+    public StopWatch() {
+        this.startTime = new Date().getTime();
     }
-    public void start(){
-        this.startTime= new Date().getTime();
+
+    public void start() {
+        this.startTime = new Date().getTime();
     }
-    public void stop(){
-        this.endTime= new Date().getTime();
+
+    public void stop() {
+        this.endTime = new Date().getTime();
     }
-    public long  getElapsedTime(){
-        return endTime-startTime;
+
+    public long getElapsedTime() {
+        return endTime - startTime;
     }
 
     public static void main(String[] args) {
-        StopWatch stopWatch= new StopWatch();
+        StopWatch stopWatch = new StopWatch();
 
         int button;
-        Scanner scanner= new Scanner(System.in);
-        do { stopWatch.start();
+        Scanner scanner = new Scanner(System.in);
+        do {
+            stopWatch.start();
             System.out.println("nhap vao button");
-           button= scanner.nextInt();
+            button = scanner.nextInt();
 
-               stopWatch.stop();
-               System.out.println(stopWatch.getElapsedTime());
+            stopWatch.stop();
+            System.out.println(stopWatch.getElapsedTime());
         }
-        while (button!=0);
+        while (button != 0);
 
     }
 }
