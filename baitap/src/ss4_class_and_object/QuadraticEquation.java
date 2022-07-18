@@ -1,7 +1,9 @@
 package ss4_class_and_object;
 
 public class QuadraticEquation {
-    private double a, b, c;
+    private double a;
+    private double b;
+    private double c;
 
     public double getA() {
         return a;
