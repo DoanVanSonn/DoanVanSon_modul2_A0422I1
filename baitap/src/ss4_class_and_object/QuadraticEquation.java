@@ -46,6 +46,7 @@ public class QuadraticEquation {
         quadraticEquation.setA(-2);
         quadraticEquation.setB(4);
         quadraticEquation.setC(7);
+
         if (quadraticEquation.getDiscriminant() < 0) {
             System.out.println("phuong trinh vo nghiem ");
         } else if (quadraticEquation.getDiscriminant() == 0) {

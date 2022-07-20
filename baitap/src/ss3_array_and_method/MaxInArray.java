@@ -36,7 +36,5 @@ public class MaxInArray {
 
         System.out.println("Phần tử lớn nhất trong ma trận = " + max);
     }
-
-
 }
 
