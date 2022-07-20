@@ -7,7 +7,6 @@ public class Circle {
     public Circle() {
     }
 
-    ;
 
     public Circle(double r) {
         this.radius = r;

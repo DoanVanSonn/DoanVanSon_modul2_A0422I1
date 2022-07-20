@@ -19,7 +19,7 @@ public class Student {
         this.name = name;
     }
 
-     protected void setClasses(String classes) {
+    protected void setClasses(String classes) {
         this.classes = classes;
     }
 
