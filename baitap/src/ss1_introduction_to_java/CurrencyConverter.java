@@ -9,7 +9,7 @@ public class CurrencyConverter {
         Scanner sc = new Scanner(System.in);
         System.out.println("Mời bạn nhâp số tiền USD: ");
         usd = sc.nextDouble();
-        double quyDoi = usd * vnd;
-        System.out.println("giá trị VND " + quyDoi);
+        double convert = usd * vnd;
+        System.out.println("giá trị VND " + convert);
     }
 }

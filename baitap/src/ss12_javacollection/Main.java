@@ -27,7 +27,7 @@ public class Main {
                     System.out.print("enter a name Product :");
                     String nameProduct = sc.nextLine();
                     System.out.print("enter a price Product :");
-                    float priceProduct = Float.parseFloat(sc.nextLine());
+                    double priceProduct = Float.parseFloat(sc.nextLine());
                     Product sp = new Product(idProduct,nameProduct,priceProduct);
                     testProduct.addProduct(sp);
                     break;

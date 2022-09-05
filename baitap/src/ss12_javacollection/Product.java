@@ -5,15 +5,16 @@ import java.util.Objects;
 public class Product implements Comparable<Product>{
     private String idProduct;
     private String nameProduct;
-    private float price;
-    public Product(String idProduct){
+    private Double priceProduct;
+
+    public Product(String idProduct) {
         this.idProduct = idProduct;
     }
 
-    public Product(String idProduct, String nameProduct, float price) {
+    public Product(String idProduct, String nameProduct, Double priceProduct) {
         this.idProduct = idProduct;
         this.nameProduct = nameProduct;
-        this.price = price;
+        this.priceProduct = priceProduct;
     }
 
     public String getIdProduct() {
@@ -32,33 +33,30 @@ public class Product implements Comparable<Product>{
         this.nameProduct = nameProduct;
     }
 
-    public float getPrice() {
-        return price;
+    public Double getPriceProduct() {
+        return priceProduct;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public void setPriceProduct(Double priceProduct) {
+        this.priceProduct = priceProduct;
     }
 
-    //    sap xep
-    @Override
-    public int compareTo(Product o) {
-        return idProduct.compareTo(o.idProduct);
-    }
-
-    //    tim kiem de xoa:
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
+        if (!(o instanceof Product)) return false;
         Product product = (Product) o;
-        return idProduct.equals(product.idProduct);
+        return Objects.equals(getIdProduct(), product.getIdProduct()) && Objects.equals(getNameProduct(), product.getNameProduct()) && Objects.equals(getPriceProduct(), product.getPriceProduct());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idProduct, nameProduct, price);
+        return Objects.hash(getIdProduct(), getNameProduct(), getPriceProduct());
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return idProduct.compareTo(o.idProduct);
     }
 
     @Override
@@ -66,6 +64,7 @@ public class Product implements Comparable<Product>{
         return "Product{" +
                 "idProduct='" + idProduct + '\'' +
                 ", nameProduct='" + nameProduct + '\'' +
-                ", price=" + price +
+                ", priceProduct=" + priceProduct +
                 '}';
-    }}
+    }
+}

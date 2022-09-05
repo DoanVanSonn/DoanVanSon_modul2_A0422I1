@@ -12,7 +12,7 @@ public class Student {
         return classes;
     }
 
-    public Student() {
+    public Student(String nam, int i, String da_nang) {
     }
 
     protected void setName(String name) {

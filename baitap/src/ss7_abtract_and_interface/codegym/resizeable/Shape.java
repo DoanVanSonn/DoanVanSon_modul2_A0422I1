@@ -27,10 +27,10 @@ public abstract class Shape {
     public void setFiller(boolean filler) {
         this.filler = filler;
     }
+
     public abstract double getArea();
 
     public abstract void resize(double percent);
-
 
 
     @Override

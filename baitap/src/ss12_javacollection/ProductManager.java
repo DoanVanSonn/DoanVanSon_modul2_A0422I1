@@ -29,8 +29,8 @@ public class ProductManager {
                 String name = sc.nextLine();
                 listProduct.get(i).setNameProduct(name);
                 System.out.print("new price product :");
-                float price = Float.parseFloat(sc.nextLine());
-                listProduct.get(i).setPrice(price);
+                double price = Float.parseFloat(sc.nextLine());
+                listProduct.get(i).setPriceProduct(price);
             }else {
                 System.out.println("ko co product nao trung khop vs id nay");
             }
@@ -64,9 +64,9 @@ public class ProductManager {
         Collections.sort(this.listProduct, new Comparator<Product>() {
             @Override
             public int compare(Product sv1, Product sv2) {
-                if (sv1.getPrice() > sv2.getPrice()) {
+                if (sv1.getPriceProduct() > sv2.getPriceProduct()) {
                     return 1;
-                } else if (sv1.getPrice() < sv2.getPrice()) {
+                } else if (sv1.getPriceProduct() < sv2.getPriceProduct()) {
                     return -1;
                 } else {
                     return 0;
@@ -79,9 +79,9 @@ public class ProductManager {
         Collections.sort(this.listProduct, new Comparator<Product>() {
             @Override
             public int compare(Product sv1, Product sv2) {
-                if (sv1.getPrice() > sv2.getPrice()) {
+                if (sv1.getPriceProduct() > sv2.getPriceProduct()) {
                     return -1;
-                } else if (sv1.getPrice() < sv2.getPrice()) {
+                } else if (sv1.getPriceProduct() < sv2.getPriceProduct()) {
                     return 1;
                 } else {
                     return 0;

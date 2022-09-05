@@ -1,4 +1,4 @@
-package ss10_dsa.codegym;
+package ss10_dsa.codegym.List;
 
 import java.util.Arrays;
 

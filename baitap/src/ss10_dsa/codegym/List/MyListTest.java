@@ -1,4 +1,6 @@
-package ss10_dsa.codegym;
+package ss10_dsa.codegym.List;
+
+import ss10_dsa.codegym.List.MyList;
 
 public class MyListTest {
     public static void main(String[] args) {

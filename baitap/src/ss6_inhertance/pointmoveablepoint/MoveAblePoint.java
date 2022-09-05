@@ -30,8 +30,8 @@ public class MoveAblePoint extends Point {
     }
 
     public void setSpeed(float xSpeed, float ySpeed) {
-        this.x = xSpeed;
-        this.y = ySpeed;
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
     }
 
     public float[] getSpeed() {

@@ -1,52 +1,74 @@
-package com.codegym;
+package ss10_dsa.codegym.linkedlist;
 
-public class MyLinkedList {
+public class MyLinkedList<E> {
     private Node head;
     private int numNodes;
 
-    public MyLinkedList(Object data) {
-        head = new Node(data);
+    public MyLinkedList(int i){
+        head = null;
+        numNodes = 0;
     }
 
-    public void add(int index, Object data) {
+    public void add(int index, E element) {
         Node temp = head;
-        Node holder;
+        Node head;
+        ;
 
         for (int i = 0; i < index - 1 && temp.next != null; i++) {
             temp = temp.next;
         }
-        holder = temp.next;
-        temp.next = new Node(data);
-        temp.next.next = holder;
+        head = temp.next;
+        temp.next = new Node(element);
+        temp.next.next = head;
         numNodes++;
     }
 
-    public void addFirst(Object data) {
+    public void addFirst(E element) {
+        Node newNode = new Node(element);
+        numNodes++;
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void addLast(E element) {
         Node temp = head;
-        head = new Node(data);
-        head.next = temp;
+        for (int i = 0; i < numNodes - 1; i++)
+            temp = temp.next;
+        Node newNode = new Node(element);
+        temp.next = newNode;
         numNodes++;
     }
 
-    public Node get(int index) {
+    public E remove(int index) {
+        if (numNodes <= index || index < 0 ) {
+            throw new ArrayIndexOutOfBoundsException("Index khong hop le");
+        }
         Node temp = head;
-        for (int i = 0; i < index; i++) {
+        if (index == 0) {
+            head = temp.next;
+            numNodes--;
+            return (E) temp.getData();
+        }
+
+        for (int i = 0; i < index - 1; i++) {
             temp = temp.next;
         }
-        return temp;
+        E value = (E) temp.next.getData();
+        temp.next = temp.next.next;
+        numNodes--;
+        return value;
     }
-
     public void printList() {
         Node temp = head;
-        while (temp != null) {
+        while(temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }
     }
 
-    private class Node {
+    class Node {
+        private Object data;
         private Node next;
-        private final Object data;
 
         public Node(Object data) {
             this.data = data;
@@ -55,5 +77,14 @@ public class MyLinkedList {
         public Object getData() {
             return this.data;
         }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
     }
+
 }
